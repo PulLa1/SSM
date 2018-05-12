@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置全局属性-->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="cacheEnabled" value="true"/>
+        <!--驼峰命名-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--&lt;!&ndash;二级缓存&ndash;&gt;-->
+        <!--<setting name="cacheEnable" value="true"/>-->
+    </settings>
+    <typeAliases>
+        <package name="com.spring.pojo"/>
+    </typeAliases>
+    
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--页码大于最大显示最大，页码小于最小显示最小-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+</configuration>
